@@ -1,6 +1,0 @@
----
-# todoapp.yml file
-
-- name: Provision /data directory or partition
-  sudo: True
-  file: path=/data state=directory mode="u=rw,g=r,o=r"

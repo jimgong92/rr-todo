@@ -1,5 +1,0 @@
----
-- name: Provisioning Docker
-  hosts: docker
-  roles:
-    - docker

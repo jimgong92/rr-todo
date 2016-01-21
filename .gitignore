@@ -5,3 +5,4 @@ node_modules
 secret
 bin/*
 *.png
+.vagrant

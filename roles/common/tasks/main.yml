@@ -1,5 +1,0 @@
----
-# tasks file for common
-
- - include: utils.yml
- - include: todoapp.yml
