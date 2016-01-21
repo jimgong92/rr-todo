@@ -1,0 +1,44 @@
+---
+# tasks file for common
+
+- name: Essentials | Upgrade the Server
+  sudo: True
+  apt: upgrade=safe
+
+- name: Essentials | Install all the essential packages
+  sudo: True
+  apt: pkg={{ item }} state=latest update_cache=yes cache_valid_time=3600
+  with_items:
+    - build-essential
+    - htop
+    - curl
+    - lsof
+    - sysstat
+    - strace
+    - screen
+    - iptraf
+    - mc
+    - iotop
+    - wget
+
+- name: Rebooting the VMs
+  sudo: True
+  command: /sbin/shutdown -r now
+
+- name: Wait for instance to come online (1 minute timeout)
+  sudo: false
+  local_action:
+    module: wait_for
+    host: "{{ ansible_ssh_host|default(inventory_hostname) }}"
+    port: 22
+    delay: 30
+    timeout: 60
+    state: started
+
+- name: Make sure chef/puppet is not running
+  sudo: True
+  apt: pkg={{ item }} state=absent
+  with_items:
+    - puppet
+    - chef
+    - chef-client

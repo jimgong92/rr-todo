@@ -1,0 +1,9 @@
+[loctodoapp:children]
+todoapp
+docker
+
+[loctodoapp]
+192.168.56.10 assign_hostname=loctodoapp.todoapp.com
+
+[docker]
+192.168.56.10 assign_hostname=loctodoapp.todoapp.com

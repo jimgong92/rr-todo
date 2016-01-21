@@ -1,0 +1,6 @@
+---
+ - hosts: all
+   sudo: True
+   gather_facts: True
+   roles:
+     - common
