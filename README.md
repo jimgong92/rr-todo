@@ -1,2 +1,1 @@
-# vad-stack-ex
-Vagrant + Ansible + Docker example
+# React Redux To Do List
