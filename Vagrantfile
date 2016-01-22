@@ -16,4 +16,5 @@ Vagrant.configure(VAGRANT_API_VERSION) do |config|
     vb.name = "todoapp"
     vb.memory = "1536"
   end
+  config.vm.provision "shell", path: "provisioning/node.sh"
 end
