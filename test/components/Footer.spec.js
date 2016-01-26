@@ -1,8 +1,8 @@
 import expect from 'expect'
 import React from 'react'
 import TestUtils from 'react-addons-test-utils'
-import Footer from '../../components/Footer'
-import { SHOW_ALL, SHOW_ACTIVE } from '../../constants/TodoFilters'
+import Footer from '../../src/js/components/Footer'
+import { SHOW_ALL, SHOW_ACTIVE } from '../../src/js/constants/TodoFilters'
 
 function setup(propOverrides) {
   const props = Object.assign({
